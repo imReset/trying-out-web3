@@ -82,7 +82,7 @@ function TransferModal({ sanityTokens, thirdWebTokens, walletAddress }) {
               color: "#27ad75",
             }}
           >
-            Transfer complete
+            Transfer complete!
           </div>
         );
       default:
