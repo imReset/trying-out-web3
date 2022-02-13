@@ -46,16 +46,68 @@ function TransferModal({ sanityTokens, thirdWebTokens, walletAdress }) {
             walletAdress={walletAdress}
           />
         );
-        case "transferring":
-          retunr (
-            <div
+      case "transferring":
+        retunr(
+          <div
             style={{
               width: "100%",
               height: "100%",
               display: "flex",
-              
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItemws: "center",
+              fontSize: "1.5rem",
             }}
-          )
+          >
+            <h2>Transfering in progress...</h2>
+            <TailSpin
+              height="100"
+              width="100"
+              color="#3773f5"
+              ariaLabel="loading"
+            />
+          </div>
+        );
+      case "transferred":
+        return (
+          <div
+            style={{
+              width: "100%",
+              height: "100%",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              fontSize: "2rem",
+              fontWeight: "600",
+              color: "#27ad75",
+            }}
+          >
+            Transfer Complete!
+          </div>
+        );
+        defualt: return <h2>send</h2>;
     }
   };
+
+  return (
+    <Wrapper>
+      <Selector>
+        <Option
+          style={action === "send" ? selectedStyle : unselectedStyle}
+          onClick={() => setAction("send")}
+        >
+          <p>Send</p>
+        </Option>
+        <Option
+          style={action === "receive" ? selectedStyle : unselectedStyle}
+          onClick={() => setAction("receive")}
+        >
+          <p>Recieve</p>
+        </Option>
+      </Selector>
+      <ModalMain>{selectedModal(action)}</ModalMain>
+    </Wrapper>
+  );
 }
+
+export default TransferModal;
