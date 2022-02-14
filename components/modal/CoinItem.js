@@ -76,13 +76,11 @@ const Wrapper = styled.div`
     background-color: #0e0f14;
   }
 `;
-
 const Main = styled.div`
   flex: 1;
   display: flex;
   align-items: center;
 `;
-
 const Icon = styled.div`
   margin-right: 1rem;
   height: 1.8rem;
@@ -97,7 +95,6 @@ const Icon = styled.div`
     object-fit: cover;
   }
 `;
-
 const NameDetails = styled.div``;
 
 const Name = styled.div`
@@ -108,6 +105,11 @@ const Name = styled.div`
 const Balance = styled.div``;
 
 const IsSelected = styled.div`
+  margin-left: 0.5rem;
+  color: #3773f5;
+`;
+
+const Symbol = styled.div`
   color: #888f9b;
   font-size: 0.8rem;
 `;
