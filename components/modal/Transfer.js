@@ -25,7 +25,7 @@ function Transfer({ selectedToken, setAction, thirdWebTokens, walletAddress }) {
 
   useEffect(() => {
     const getBalance = async () => {
-      const balance = await setActiveThirdWebToken.balanceOf(walletAddress);
+      const balance = await activeThirdWebToken.balanceOf(walletAddress);
       setBalance(balance.displayValue);
     };
 
@@ -36,7 +36,7 @@ function Transfer({ selectedToken, setAction, thirdWebTokens, walletAddress }) {
 
   const sendCrypto = async (amount, recepient) => {
     if (activeThirdWebToken && amount && recepient) {
-      setAction("tranferring...");
+      setAction("transferring");
 
       const tx = await activeThirdWebToken.transfer(
         recepient,
@@ -61,7 +61,7 @@ function Transfer({ selectedToken, setAction, thirdWebTokens, walletAddress }) {
           />
           <span>{selectedToken.symbol}</span>
         </FlexInputContainer>
-        <Warning amount={amount}>Amount is a required field</Warning>
+        <Warning amount={amount}>Amount is required field</Warning>
       </Amount>
       <TransferForm>
         <Row>
@@ -71,22 +71,23 @@ function Transfer({ selectedToken, setAction, thirdWebTokens, walletAddress }) {
           </Icon>
           <Recipient
             placeholder="Address"
-            value={recipient}
+            value={recepient}
             onChange={(e) => setRecepient(e.target.value)}
           />
         </Row>
         <Divider />
         <Row>
-          <FieldName>Pay With</FieldName>
+          <FieldName>Pay with</FieldName>
           <CoinSelectList onClick={() => setAction("select")}>
             <Icon>
               <img src={imageUrl} alt="coin" />
             </Icon>
+            <CoinName>{selectedToken.name}</CoinName>
           </CoinSelectList>
         </Row>
       </TransferForm>
       <Row>
-        <Button onClick={() => sendCrypto(amount, recipient)}>Continue</Button>
+        <Button onClick={() => sendCrypto(amount, recepient)}>Continue</Button>
       </Row>
       <Row>
         <BalanceTitle>{selectedToken.name} Balance</BalanceTitle>
