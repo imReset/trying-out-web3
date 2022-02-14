@@ -217,3 +217,4 @@ const CoinName = styled.div`
   text-wrap: wrap;
   margin-right: 0.5rem;
 `;
+  
