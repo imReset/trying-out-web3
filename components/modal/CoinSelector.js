@@ -55,10 +55,6 @@ function Receive({ setAction, selectedToken, walletAddress }) {
 export default Receive;
 
 const Wrapper = styled.div`
-  border: 1px solid #282b2f;
-  border-radius: 0.5rem;
-  display: flex;
-  flex-direction: column;
   height: 100%;
 `;
 
