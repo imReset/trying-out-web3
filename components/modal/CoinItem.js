@@ -38,3 +38,30 @@ function CoinItem({
     getBalance();
   }, []);
 }
+
+return (
+  <Wrapper
+    style={{
+      backgroundColor: selectedToken.name === token.name && "#141519",
+    }}
+    onClick={() => setSelectedToken(token)}
+  >
+    <Main>
+      <Icon>
+        <img src={imageUrl} alt={token.name} />
+      </Icon>
+      <NameDetails>
+        <Name>{token.name}</Name>
+        <Symbol>{token.symbol}</Symbol>
+      </NameDetails>
+    </Main>
+    <Balance>
+      {balance} {token.symbol}
+    </Balance>
+    <IsSelected>
+      {selectedToken.contractAddress === token.contractAddress && <FaCheck />}
+    </IsSelected>
+  </Wrapper>
+);
+
+export default CoinItem;
