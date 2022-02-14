@@ -11,7 +11,7 @@ function CoinSelector({
 }) {
   return (
     <Wrapper>
-      <Title>Select a token</Title>
+      <Title>Select A Token</Title>
       <CoinList>
         {sanityTokens.map((token) => (
           <CoinItem

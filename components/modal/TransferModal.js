@@ -86,7 +86,7 @@ function TransferModal({ sanityTokens, thirdWebTokens, walletAddress }) {
           </div>
         );
       default:
-        return <h2>send</h2>;
+        return <h2>Send</h2>;
     }
   };
 

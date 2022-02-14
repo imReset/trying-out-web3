@@ -42,7 +42,7 @@ function Receive({ setAction, selectedToken, walletAddress }) {
         <Divider />
         <Row>
           <div>
-            <Title>{selectedToken.symbol} Address</Title>
+            <Title>{selectedToken.symbol}Address</Title>
             <Address>{walletAddress}</Address>
           </div>
           <CopyButton

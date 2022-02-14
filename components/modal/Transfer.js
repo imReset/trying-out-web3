@@ -45,7 +45,7 @@ function Transfer({ selectedToken, setAction, thirdWebTokens, walletAddress }) {
 
       setAction("transferred");
     } else {
-      console.error("Missing required fields");
+      console.error("Missing required fields!");
     }
   };
 
@@ -61,7 +61,7 @@ function Transfer({ selectedToken, setAction, thirdWebTokens, walletAddress }) {
           />
           <span>{selectedToken.symbol}</span>
         </FlexInputContainer>
-        <Warning amount={amount}>Amount is required field</Warning>
+        <Warning amount={amount}>Amount is a required field</Warning>
       </Amount>
       <TransferForm>
         <Row>
@@ -90,7 +90,7 @@ function Transfer({ selectedToken, setAction, thirdWebTokens, walletAddress }) {
         <Button onClick={() => sendCrypto(amount, recepient)}>Continue</Button>
       </Row>
       <Row>
-        <BalanceTitle>{selectedToken.name} Balance</BalanceTitle>
+        <BalanceTitle>{selectedToken.name}Balance</BalanceTitle>
         <Balance>
           {balance} {selectedToken.name}
         </Balance>
