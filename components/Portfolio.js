@@ -33,7 +33,7 @@ function Portfolio({ thirdWebTokens, sanityTokens, walletAddress }) {
       <Content>
         <Chart>
           <div>
-            <BalanceTitle>Portolio balance</BalanceTitle>
+            <BalanceTitle>Portolio Balance</BalanceTitle>
             <BalanceValue>
               {"$"}
               {walletBalance.toLocaleString()}
