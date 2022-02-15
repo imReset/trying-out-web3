@@ -3,13 +3,13 @@ import styled from "styled-components";
 import Portfolio from "./Portfolio";
 import Promos from "./Promos";
 
-function Main({ thirdWebTokens, sanityTokens, walletAddres }) {
+function Main({ thirdWebTokens, sanityTokens, walletAddress }) {
   return (
     <Wrapper>
       <Portfolio
-        walletAddres={walletAddres}
+        walletAddress={walletAddress}
         sanityTokens={sanityTokens}
-        thirdWebTokens={thirdWeb}
+        thirdWebTokens={thirdWebTokens}
       />
       <Promos />
     </Wrapper>
@@ -17,3 +17,16 @@ function Main({ thirdWebTokens, sanityTokens, walletAddres }) {
 }
 
 export default Main;
+
+const Wrapper = styled.div`
+  display: flex;
+  max-height: calc(100vh - 64px);
+  overflow: hidden;
+  overflow-y: scroll;
+  :webkit-scrollbar {
+    display: none;
+  }
+  & div {
+    border-radius: 0.4rem;
+  }
+`;
