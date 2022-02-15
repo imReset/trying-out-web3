@@ -12,4 +12,19 @@ function Portfolio({ thirdWebTokens, sanityTokens, walletAddress }) {
   for (const token of sanityTokens) {
     tokenToUsd[token.contractAddress] = Number(token.usdPrice);
   }
+
+  useEffect(() => {
+    const calculateTotalBalance = async () => {
+      const totalBalance = await Promise.all(
+        thirdWebTokens.map(async (token) => {
+          const balance = await token.balanceOf(walletAddress);
+          return Number(balance.displayValue) * tokenToUsd[token.address];
+        })
+      );
+
+      setWalletBalance(totalBalance.reduce((acc, cur) => acc + cur, 0));
+    };
+
+    return calculateTotalBalance();
+  }, [thirdWebTokens, sanityTokens]);
 }
