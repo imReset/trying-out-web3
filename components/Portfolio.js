@@ -119,7 +119,6 @@ const TableRow = styled.tr`
   width: 100%;
   display: flex;
   justify-content: space-between;
-
   & > th {
     text-align: left;
   }
@@ -129,7 +128,7 @@ const TableItem = styled.div`
   padding: 1rem 2rem;
 `;
 
-const Divier = styled.div`
+const Divider = styled.div`
   border-bottom: 1px solid #282b2f;
 `;
 
